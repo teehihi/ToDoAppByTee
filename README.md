@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# 📝 ToDoApp by Tee
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ứng dụng **To-Do List** được xây dựng bằng **React + TypeScript + Vite**.  
+Giao diện tối giản, mượt mà, hỗ trợ thêm, xóa, và đánh dấu hoàn thành công việc.  
 
-Currently, two official plugins are available:
+## 🚀 Công nghệ sử dụng
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ **React** — Thư viện xây dựng giao diện người dùng  
+- ⚡ **Vite** — Công cụ build và dev server cực nhanh  
+- 🧠 **TypeScript** — Ngôn ngữ mạnh mẽ giúp code an toàn hơn  
+- 💅 **CSS / Tailwind (tùy chọn)** — Tùy chỉnh giao diện linh hoạt  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧩 Cài đặt & Chạy dự án
 
-## Expanding the ESLint configuration
+```bash
+# 1️⃣ Clone dự án
+git clone https://github.com/teehihi/ToDoAppByTee.git
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 2️⃣ Cài đặt thư viện
+cd ToDoAppByTee
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 3️⃣ Chạy ứng dụng
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ✨ Tính năng chính
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- ✅ Thêm công việc mới  
+- 🗑 Xóa công việc  
+- ✏️ Đánh dấu hoàn thành  
+- 💾 Dữ liệu lưu tạm trong bộ nhớ  
+
+---
+
+## 🛠 Cấu trúc thư mục
+
 ```
+todo-app-react/
+│
+├── node_modules/                 # Thư viện được cài bằng npm/yarn
+├── public/                       # Chứa các file tĩnh (favicon, ảnh, v.v.)
+│   └── vite.svg
+│
+├── src/                          # Mã nguồn chính của ứng dụng
+│   ├── assets/                   # (Tuỳ chọn) – chứa hình ảnh, icon, font...
+│   ├── App.css                   # CSS riêng cho App.tsx
+│   ├── App.tsx                   # Thành phần React chính
+│   ├── index.css                 # CSS toàn cục
+│   ├── main.tsx                  # Điểm vào ứng dụng (entry point)
+│
+├── .gitignore                    # Các file/thư mục bị Git bỏ qua
+├── eslint.config.js              # Cấu hình ESLint
+├── index.html                    # Trang HTML gốc
+├── package.json                  # Thông tin dự án và dependencies
+├── package-lock.json             # Ghi lại chính xác version dependencies
+├── README.md                     # Tài liệu hướng dẫn (bạn vừa tạo)
+├── tsconfig.json                 # Cấu hình TypeScript chính
+├── tsconfig.app.json             # Cấu hình TS cho app
+├── tsconfig.node.json            # Cấu hình TS cho phần Node/Vite
+└── vite.config.ts                # Cấu hình Vite
+```
+
+---
+
+## 🧠 Gợi ý mở rộng
+
+- Lưu công việc bằng LocalStorage  
+- Giao diện tối/sáng (Dark/Light mode)  
+- Kéo thả để sắp xếp công việc  
+- Kết nối với Backend (Firebase hoặc Node.js API)  
+
+---
+
+## 👨‍💻 Tác giả
+
+**Nguyễn Nhật Thiên (Tee)**  
+🌐 [GitHub: @teehihi](https://github.com/teehihi)  
+🔗 [Linktree: nkqt.tee](https://linktr.ee/nkqt.tee)
+
+---
+
+
+> Dự án này được tạo từ template **React + TypeScript + Vite** với mục tiêu học tập và thực hành frontend.
